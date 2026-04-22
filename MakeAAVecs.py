@@ -20,14 +20,10 @@ def GetAAData_MDS(N_pcs=None): #use all dimensions by default
     for row, lin in enumerate(lines[1:]):
         cols = lin.strip().split("\t")
         blosum62[row]=[int(v) for v in cols[1:]]
-    
-    for row, lin in enumerate(lines[1:]):
-        cols = lin.strip().split("\t")
-        blosum62[row]=[int(v) for v in cols[1:]]
 
     DM1=distance_matrix(blosum62, blosum62)
     dm1 = DistanceMatrix(DM1, ids=aas_blosum)
-    res1 = pcoa(dm1, number_of_dimensions=N_pcs)   #true to life PCooA and not that scikit fake stuff
+    res1 = pcoa(dm1, number_of_dimensions=N_pcs)   #true to life PCooA 
 
     aas_t=res1.samples.values
     aa_coords={}
