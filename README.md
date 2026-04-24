@@ -53,4 +53,22 @@ A draft of the searching algorithm is in Searcher-Draft.ipynb
 It has been implemented as a webapp and is VERY fast and is looks very robust
  
 
+## PART 4. Structure inspection
+
+Currently there is just PAASStructure creator. This is a file that using a .gz PDB file is able to create a new PDB file with PAAS scores inputed for each amino acid residue. 
+
+This script requires 4 sequential parameters:
+   1. filename with protein structure (.pdb.gz)
+   2. filename with output (.pdb)
+   3. filename with PAAS IDX scores produced earlier
+   4. filename with PAAS clusters
+
+`$ python PAASStructureCreator.py sample_files/AF-P22374-F1-model_v4.pdb.gz \
+          AF-P22374-F1-model_v4.paas.pdb \
+          PAASScores_trimmed.pickle \
+          PAAS_Clusters.pickle`
+
+
+
+
 
