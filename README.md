@@ -40,7 +40,7 @@ This will read the PAAS idxs and Centroids defined at 1.3 and go for all file in
 
 #### 2.1.1. *Very important* - It is important to trim the least significant PAAS 
 
-` `$ python PAASTrimmer.py [#bits to remove] [trimmed file name]
+`$ python PAASTrimmer.py [#bits to remove] [trimmed file name]`
 
 With this tool  it was created a file that for each protein has only the relevant PAAS with the exact same structure of `AllProtPaas.pickle`
 
@@ -55,13 +55,23 @@ It has been implemented as a webapp and is VERY fast and is looks very robust
 
 ## PART 4. Structure inspection
 
-Currently there is just PAASStructure creator. This is a file that using a .gz PDB file is able to create a new PDB file with PAAS scores inputed for each amino acid residue. 
+### 4.1. Create PAAS Scores
+
+The first step is to create a score for each PAAS IDX. This is done using a modification of PAASTrimmer [this pipleine will probably change in the future]. It creates a score, and then transforms that score with a scaled power transform for [0, 1] output.
+
+`$ python PAASScorer.py [#bits to remove] [trimmed file name]`
+
+### 4.2 Create PDB files for visualization in PDB visualization software (PyMol, Chimera, ...)
+
+Currently there is just `PAASStructureCreator.py`. This is a file that using a .gz PDB file is able to create a new PDB file with PAAS scores inputed for each amino acid residue. 
 
 This script requires 4 sequential parameters:
    1. filename with protein structure (.pdb.gz)
    2. filename with output (.pdb)
-   3. filename with PAAS IDX scores produced earlier
+   3. filename with PAAS IDX scores produced in 4.1
    4. filename with PAAS clusters
+
+Example
 
 `$ python PAASStructureCreator.py sample_files/AF-P22374-F1-model_v4.pdb.gz \
           AF-P22374-F1-model_v4.paas.pdb \
