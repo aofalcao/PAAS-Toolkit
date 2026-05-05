@@ -38,7 +38,7 @@ b) creating the PAAS Indexes for a new file - This is more complex as there may 
 This will read the PAAS idxs and Centroids defined at 1.3 and go for all file in the pickle folder to process all the PAAS
 
 
-#### 2.1.1. *Very important* - It is important to trim the least significant PAAS 
+#### 2.1.1.  It may be important to trim the least significant PAAS - this is especially true for Searching and PC modeling
 
 `$ python PAASTrimmer.py [#bits to remove] [trimmed file name]`
 
