@@ -422,16 +422,21 @@ The software snapshot used for the study is archived on Zenodo:
 Most computations were performed on a **Dell Power Edge R530 with 2x Xeon E5-2630 v4 @ 2.2 GHz and 64 Gb of RAM** running Debian 12.8
 
 ### Hardware requirements
-There are no specific hardware requirements, and the code has been run on Windows 11, MacOS (M processors) and Linux
+There are no specialized hardware requirements, and the code has been run on Windows 11, MacOS (M processors) and Linux
 
 ### Installation time
 
-There is no installation time - just the download of the code from GitHub: `git clone https://github.com/aofalcao/PAAS-Toolkit`
+The PAAS-Toolkit itself does not require compilation or installation and can be obtained directly with:
+
+`git clone https://github.com/aofalcao/PAAS-Toolkit`
+
+Python dependencies must be installed separately using the supplied requirements-main.txt and requirements-pdb.txt files. Installation time therefore depends mainly on the Python environment, package manager and network connection.
 
 ### Demo Runtime
 
-The longest time in the PAAS Toolkit is actually Processing the PAAS, which depends on the number of structures and radius. For the sample dataset included, on the Dell Power Edge computer referenced  above, **all 20 large PDB files were processed in 21.0 seconds**, thus approximately 1 second per file.  **NOTE:** This is the effort to compute the PAAS for just these 20 sample files, it does not provide the full set of combinations required for creating PAAS indexes and full annotation of proteins
+The principal computational cost in the PAAS-Toolkit is extraction of PAAS neighbourhoods from protein structures; runtime depends on the number and size of the structures and on the neighbourhood radius. Using the supplied 20-structure Sample_Data dataset and a 4.0 Angstrom radius, all 20 structures were processed in 21.0 seconds on the Dell PowerEdge R530 described above, corresponding to approximately **1 second per structure**.
 
+**Note:** This runtime refers only to PAAS extraction from the 20 supplied example structures. The sample dataset is intended to demonstrate and verify the structure-to-PAAS workflow and is not sufficiently large to reconstruct the full 20,736-label PAAS vocabulary used in the study.
 
 
 # Citation
