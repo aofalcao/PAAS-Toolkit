@@ -417,6 +417,22 @@ The software snapshot used for the study is archived on Zenodo:
 **DOI: 10.5281/zenodo.21724410**
 
 ---
+# Hardware and Operating system
+
+Most computations were performed on a **Dell Power Edge R530 with 2x Xeon E5-2630 v4 @ 2.2 GHz and 64 Gb of RAM** running Debian 12.8
+
+### Hardware requirements
+There are no specific hardware requirements, and the code has been run on Windows 11, MacOS (M processors) and Linux
+
+### Installation time
+
+There is no installation time - just the download of the code from GitHub: `git clone https://github.com/aofalcao/PAAS-Toolkit`
+
+### Demo Runtime
+
+The longest time in the PAAS Toolkit is actually Processing the PAAS, which depends on the number of structures and radius. For the sample dataset included, on the Dell Power Edge computer referenced  above, **all 20 large PDB files were processed in 21.0 seconds**, thus approximately 1 second per file.  **NOTE:** This is the effort to compute the PAAS for just these 20 sample files, it does not provide the full set of combinations required for creating PAAS indexes and full annotation of proteins
+
+
 
 # Citation
 
