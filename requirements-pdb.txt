@@ -1,0 +1,7 @@
+# PAAS-Toolkit structure/PDB processing environment
+# Used for protein structure parsing and PDB I/O
+# Python 3.14.4
+
+biopython==1.87
+numpy==2.4.4
+scipy==1.17.1
